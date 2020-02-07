@@ -17,4 +17,18 @@ int main()
     return 0;
 }
 
+void stat(const double d[],int k,double f[]){
+    double sum=0,sum2=0,max=d[0],min=d[0];
+	for(int i=0; i<k ;i++){
+        sum = sum+d[i];
+        sum2 = sum2+pow(d[i],2);
+        if(d[i]>max) max=d[i];
+        if(d[i]<min) min=d[i];
+    }
+    
+    f[0] = sum/k;
+    f[1] = sqrt(sum2/k-pow(f[0],2));
+    f[2] = max;
+    f[3] = min;
+}
 //Write definition of stat() here 
